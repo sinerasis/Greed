@@ -10,7 +10,7 @@ chrome.webRequest.onBeforeRequest.addListener(function(request) {
                 return { redirectUrl: query };
             }
 
-            // Google removed the option to hide sources you deem poor, this is gives you that option.
+            // Google removed the option to hide sources you deem poor, this gives you that option back.
             let exclude = [
                 "buzzfeed.com",
                 "facebook.com",
