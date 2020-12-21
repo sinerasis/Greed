@@ -1,17 +1,17 @@
+/*
+I've setup these options to be as simple as possible. You may find it beneficial to modify this script to suit your needs better. Feel free to submit pull requests!
+Instead of coding an entire user settings page that is user friendly, I figured wrapping everything in a simple boolean switch was simpler.
+Remember to reload the extention in Chrome after making any changes!
+
+Note: the blank new tab page is defined in manifest.json (there are no comments allowed in JSON files). If you'd rather not have a blank new tab page, simply remove the "chrome_url_overrides" block.
+*/
+
 /* Google */
 chrome.webRequest.onBeforeRequest.addListener(function(request) {
     if (request.type == "main_frame") {
         let originalRequest = new URL(request.url);
         if (originalRequest.searchParams.has("q")) {
             let query = originalRequest.searchParams.get("q");
-            /*
-            I've setup these options to be as simple as possible. You may find it beneficial to modify this script to suit your needs better. Feel free to submit pull requests!
-            Instead of coding an entire user settings page that is user friendly, I figured wrapping everything in a simple boolean switch was simpler.
-            Remember to reload the extention in Chrome after making any changes!
-
-            Note: the blank new tab page is defined in manifest.json (there are no comments allowed in JSON files). If you'd rather not have a blank new tab page, simply remove the "chrome_url_overrides" block.
-            */
-            
             /*
             Google Search Bounce
 
