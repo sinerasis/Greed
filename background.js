@@ -31,7 +31,7 @@ chrome.webRequest.onBeforeRequest.addListener(function(request) {
 
             Google used to have an option to stop seeing results from particular sources. You had the option to downvote results and your personal search results would exclude sources you found bad.
             They removed this option for reasons unknown, however you still have the ability to exclude domains in each search request.
-            It's a very tedious task to remmber to add -site:domain.com to every single search you ever make, and gets crazy if you want to exclude a few. This automatically appends exclusions to your Google searches.
+            It's a very tedious task to remember to add -site:domain.com to every single search you ever make, and gets crazy if you want to exclude a few domains. This automatically appends exclusions to your Google searches.
             Note: try to keep this array as small as possible.
             */
             if (true) {
@@ -61,7 +61,7 @@ chrome.webRequest.onBeforeRequest.addListener(function(request) {
         "http://*.google.com/*",
         "https://*.google.com/*"
     ]
-}, [ "blocking"] );
+}, [ "blocking" ] );
 
 /* Reddit */
 chrome.webRequest.onBeforeRequest.addListener(function(request) {
@@ -89,4 +89,4 @@ chrome.webRequest.onBeforeRequest.addListener(function(request) {
         "http://www.reddit.com/*",
         "https://www.reddit.com/*"
     ]
-}, [ "blocking"] );
+}, [ "blocking" ] );
