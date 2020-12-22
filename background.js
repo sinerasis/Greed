@@ -77,6 +77,7 @@ chrome.webRequest.onBeforeRequest.addListener(function(request) {
         */
         if (true) {
             if (!originalRequest.host.includes("old")) {
+                console.log("Info: Redirecting to old.reddit.com.");
                 return { redirectUrl: "https://old.reddit.com" + originalRequest.pathname };
             }
         }
