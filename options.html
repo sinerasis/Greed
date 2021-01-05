@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Greed Options</title>
+        <!--
+            These files are copied straight out of Chrome.
+            The only changes present are replacing chrome://resources with ones that will work with our extension (fonts).
+        -->
+        <link rel="stylesheet" href="styles/text_defaults_md.css">
+        <link rel="stylesheet" href="styles/flags.css">
+
+        <!-- There are a few instances where we want to change a style from Google, greed.css is where we put those changes. -->
+        <link rel="stylesheet" href="styles/greed.css">
+
+        <script type="text/javascript" src="js/options.js"></script>
+    </head>
+    <body>
+        <!-- The markup/structure of this page is taken from the chrome://flags page and modified as necessary. -->
+        <div id="header">
+            <div class="flex-container">
+                <!--
+                <div class="flex">
+                    <div class="search-container">
+                        <input type="text" id="search" placeholder="Search options" tabindex="1" autocomplete="off" spellcheck="false">
+                        <input type="button" class="clear-search" title="Clear search" tabindex="2">
+                    </div>
+                </div>
+                -->
+                <div class="flex">
+                    <div class="flex">
+                        <button id="options-reset-all" type="button" tabindex="3">Reset all</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="body-container">
+            <div id="flagsTemplate">
+                <div class="flex-container">
+                    <div class="flex">
+                        <h1 class="section-header-title">Greed Options</h1>
+                    </div>
+                    <span id="version" class="flex"></span>
+                </div>
+                <div class="blurb-container">
+                    <span>An extension for Google Chrome / Chromium that gives a small amount of power back to the user.</span>
+                </div>
+
+                <h2 class="experiment-group">Google</h2>
+
+                <div class="experiment">
+                    <div class="experiment-default flex-container">
+                        <div class="flex">
+                            <h3 class="experiment-name">Prevent Search Bounce</h3>
+                            <p>Clicking links in a Google web app (Gmail, Hangouts, etc) routes users through Google search. This an invasion of privacy it breaks internal links.</p>
+                        </div>
+                        <div class="flex experiment-actions">
+                            <select class="experiment-select parameter-toggle" id="toggleGoogleSearchBounce">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experiment">
+                    <div class="experiment-default flex-container">
+                        <div class="flex">
+                            <h3 class="experiment-name">Search Exclusions</h3>
+                            <p>Automatically append "-site:domain.tld" to Google search requests.<br>Note: You'll likely want to keep this list short!</p>
+                        </div>
+                        <div class="flex experiment-actions">
+                            <select class="experiment-select parameter-toggle" id="toggleGoogleSearchExclusions">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex experiment-parameters">
+                        <input type="text" placeholder="domain.tld" class="user-parameter-text" id="textGoogleSearchExclusions">
+                        <button id="buttonGoogleSearchExclusionsAdd">Add</button><br>
+                        <select size=2 class="experiment-multiselect parameter-multi" id="selectGoogleSearchExclusions">
+                        </select>
+                        <button class="align-top" id="buttonGoogleSearchExclusionsRemove">Remove</button>
+                    </div>
+                </div>
+
+                <h2 class="experiment-group">Reddit</h2>
+
+                <div class="experiment">
+                    <div class="experiment-default flex-container">
+                        <div class="flex">
+                            <h3 class="experiment-name">Redirect to old.reddit.com</h3>
+                            <p>Automatically append "old." subdomain to reddit.com requests.</p>
+                        </div>
+                        <div class="flex experiment-actions">
+                            <select class="experiment-select parameter-toggle" id="toggleRedditOldRedirect">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </body>
+</html>

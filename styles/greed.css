@@ -1,0 +1,58 @@
+/* Overrides and Changes */
+
+/* Simplifies the spacing between experiment containers. */
+.experiment {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/*
+TODO: experiment h3's aren't picking up the correct weight somewhere in our cascade. This is a quick and dirty fix.
+I think this probably has more to do with the font import than CSS.
+*/
+.experiment-name {
+    font-weight: bold;
+}
+
+
+/* Additions */
+
+/* This gives us a quick way to create groups within our experiments, good for organization. */
+.experiment-group {
+    font-size: 1.25em;
+    border-bottom: 1px solid #ddd;
+    margin-top: 2em;
+}
+
+@media(min-width:600px) {
+    .experiment-parameters {
+        padding-left: 3em;
+    }
+}
+
+.experiment-multiselect {
+    height: 100px;
+    min-width: 200px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    text-align-last: unset;
+}
+.experiment-multiselect option {
+    padding: 8px 12px;
+    color: var(--google-grey-700);
+}
+
+input.user-parameter-text {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    margin-bottom: .25em;
+    border-radius: 3px;
+    min-width: 200px;
+    box-sizing: border-box;
+}
+
+.align-top {
+    vertical-align: top;
+}
+

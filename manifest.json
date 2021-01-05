@@ -2,11 +2,13 @@
     "manifest_version": 2,
     "name": "Greed",
     "description": "Greed necessitates bahavior modification.",
-    "version": "0.1",
+    "version": "2021.01.5.1",
+    
+    "options_page": "options.html",
     
     "background": {
         "scripts": [
-            "background.js"
+            "js/background.js"
         ],
         "persistent": true
     },
@@ -16,8 +18,10 @@
     },
 
     "permissions": [
+        "storage",
         "webRequest",
         "webRequestBlocking",
+        
         "http://*.google.com/*",
         "https://*.google.com/*",
         "http://*.reddit.com/*",
