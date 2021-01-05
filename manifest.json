@@ -13,10 +13,6 @@
         "persistent": true
     },
 
-    "chrome_url_overrides": {
-        "newtab": "blank.html"
-    },
-
     "permissions": [
         "storage",
         "webRequest",

@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     let select = document.getElementById("selectGoogleSearchExclusions");
+
+    // Add a new exclusion
     let addExclusion = document.getElementById("buttonGoogleSearchExclusionsAdd");
     addExclusion.addEventListener("click", function(event) {
         let input = document.getElementById("textGoogleSearchExclusions");
@@ -36,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    // Remove an exclusion
     let removeExclusion = document.getElementById("buttonGoogleSearchExclusionsRemove");
     removeExclusion.addEventListener("click", function(event) {
         if (select.selectedIndex > -1) {
@@ -46,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    // Save exclusions to the storage object
     function SaveExclusions() {
         let exclusions = [];
         for (i = 0; i < select.children.length; i++) {
@@ -57,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     chrome.storage.sync.get(null, function(saved) {
+        // Populate toggles
         let toggles = document.getElementsByClassName("parameter-toggle");
         for (element in toggles) {
             if (toggles[element] instanceof HTMLElement) {
@@ -87,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
 
+        // Populate multiselects
         let multis = document.getElementsByClassName("parameter-multi");
         for (element in multis) {
             if (multis[element] instanceof HTMLElement) {
